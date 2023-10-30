@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>BankingApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BankingApp.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">BankingApp </span><span class="s2">{</span>
+    <span class="s0">static double </span><span class="s1">balance </span><span class="s2">= </span><span class="s3">10000</span><span class="s2">;</span>
+
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">opt </span><span class="s2">= </span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">opt </span><span class="s2">!= </span><span class="s3">6</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Welcome to the Java Bank &quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;1. Create an Account&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;2. Check Balance&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;3. Deposit&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;4. Withdraw&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;5. Transfer&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;6. Exit&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter an option: &quot;</span><span class="s2">);</span>
+            <span class="s1">opt </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+
+            <span class="s0">switch </span><span class="s2">(</span><span class="s1">opt</span><span class="s2">) {</span>
+                <span class="s0">case </span><span class="s3">1</span><span class="s2">:</span>
+                    <span class="s1">createacc</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">2</span><span class="s2">:</span>
+                    <span class="s1">checkBalance</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">3</span><span class="s2">:</span>
+                    <span class="s1">deposit</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">4</span><span class="s2">:</span>
+                    <span class="s1">withdraw</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">5</span><span class="s2">:</span>
+                    <span class="s1">transfer</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">6</span><span class="s2">:</span>
+                    <span class="s1">exit</span><span class="s2">();</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">default</span><span class="s2">:</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Invalid option. Try again.&quot;</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+            <span class="s2">}</span><span class="s0">return</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">checkBalance</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Your current balance is $&quot; </span><span class="s2">+ </span><span class="s1">balance</span><span class="s2">);</span>
+        <span class="s0">return</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">createacc</span><span class="s2">(){</span>
+         <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+         <span class="s0">double </span><span class="s1">balance</span><span class="s2">=</span><span class="s3">0.0</span><span class="s2">;</span>
+         <span class="s0">int </span><span class="s1">accnum </span><span class="s2">= </span><span class="s3">23456789</span><span class="s2">;</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter the Account holder name&quot;</span><span class="s2">);</span>
+         <span class="s1">String Name </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">next</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter DOB in DD-MM-YYYY format&quot;</span><span class="s2">);</span>
+         <span class="s1">String dob </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">next</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter the ID proof&quot;</span><span class="s2">);</span>
+         <span class="s1">String id </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">next</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter the address&quot;</span><span class="s2">);</span>
+         <span class="s1">String addr </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">next</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter the phone number&quot;</span><span class="s2">);</span>
+         <span class="s0">int </span><span class="s1">mob </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Enter the e-mail&quot;</span><span class="s2">);</span>
+         <span class="s1">String em </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">next</span><span class="s2">();</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Account Number:&quot;</span><span class="s2">+ </span><span class="s1">accnum</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Account Holder name:&quot;</span><span class="s2">+</span><span class="s1">Name</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Date of Birth:&quot;</span><span class="s2">+</span><span class="s1">dob</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;ID Proof:&quot;</span><span class="s2">+</span><span class="s1">id</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Mobile number:&quot;</span><span class="s2">+</span><span class="s1">mob</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;E-mail ID:&quot;</span><span class="s2">+</span><span class="s1">em</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Account holder address:&quot;</span><span class="s2">+</span><span class="s1">addr</span><span class="s2">);</span>
+         <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Account balance:&quot;</span><span class="s2">+</span><span class="s1">balance</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">deposit</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter the amount to deposit: $&quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">amount </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+        <span class="s1">balance </span><span class="s2">+= </span><span class="s1">amount</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;$&quot; </span><span class="s2">+ </span><span class="s1">amount </span><span class="s2">+ </span><span class="s4">&quot; has been deposited to your account.&quot;</span><span class="s2">);</span>
+        <span class="s1">checkBalance</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">withdraw</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter the amount to withdraw: $&quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">amount </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">amount </span><span class="s2">&gt; </span><span class="s1">balance</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Insufficient funds.&quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">balance </span><span class="s2">-= </span><span class="s1">amount</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;$&quot; </span><span class="s2">+ </span><span class="s1">amount </span><span class="s2">+ </span><span class="s4">&quot; has been withdrawn from your account.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">checkBalance</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">transfer</span><span class="s2">() {</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">minamt </span><span class="s2">= </span><span class="s3">500</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter the source Account Number&quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">srcacc </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter the Destination Account Number&quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">destacc </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter the amount to transfer: $&quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">transamt </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">transamt </span><span class="s2">&gt;= </span><span class="s1">minamt </span><span class="s2">&amp;&amp; </span><span class="s1">transamt </span><span class="s2">&lt;= </span><span class="s1">balance</span><span class="s2">) {</span>
+            <span class="s0">double </span><span class="s1">totbal </span><span class="s2">= </span><span class="s1">balance </span><span class="s2">- </span><span class="s1">transamt</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Transfered Amount=&quot; </span><span class="s2">+ </span><span class="s1">transamt</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Your current balance is $&quot; </span><span class="s2">+ </span><span class="s1">totbal</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Insufficient balance&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">exit</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Thank you for banking with us. Have a great day!&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span></pre>
+</body>
+</html>
